@@ -69,4 +69,3 @@ impl Solution for DayOne {
         );
     }
 }
-
