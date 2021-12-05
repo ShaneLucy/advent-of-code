@@ -1,10 +1,12 @@
-pub fn solution(input_data: std::string::String) {
-    part_one(input_data.clone());
-    part_two(input_data.clone())
+use crate::traits::Solution;
+
+pub struct DayTwo {
+    pub input_data: std::string::String,
 }
 
-fn part_one(input_data: std::string::String) {
-    let split = input_data.split("\n");
+impl Solution for DayTwo {
+    fn part_one(&self){
+         let split = self.input_data.split("\n");
 
     let mut depth: i32 = 0;
     let mut horizontal_position: i32 = 0;
@@ -22,11 +24,11 @@ fn part_one(input_data: std::string::String) {
         };
     }
 
-    println!("{}", depth * horizontal_position)
-}
+    println!("Dive - Part 1: \n{}\n", depth * horizontal_position)
+    }
 
-fn part_two(input_data: std::string::String) {
-    let split = input_data.split("\n");
+    fn part_two(&self){
+        let split = self.input_data.split("\n");
 
     let mut depth: i32 = 0;
     let mut horizontal_position: i32 = 0;
@@ -48,5 +50,8 @@ fn part_two(input_data: std::string::String) {
         };
     }
 
-    println!("{}", depth * horizontal_position)
+    println!("Dive - Part 2: \n{}\n", depth * horizontal_position)
+    }
+
 }
+
